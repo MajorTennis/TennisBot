@@ -1,5 +1,3 @@
-var twd = require('countdowns/twd.js);
-eval(fs.readFileSync('tools.js')+'');
 var config = {
 
 	channels: ["#tvno"],
@@ -11,7 +9,8 @@ var config = {
 
 
 var irc = require("irc");
-
+var twd = require('./Countdowns/twd.js');
+var got = require('./Countdowns/got.js');
 var bot = new irc.Client(config.server, config.botName,  {
 
 	channels: config.channels
@@ -37,4 +36,20 @@ bot.addListener('message', function(from, to, message) {
 	}
 	
 
+});
+bot.addListener('message', function(from, to, message) {
+	if( message.indexOf('!twd')> -1 )
+	{
+		
+		bot.say(to, twd.showRemaining());
+		
+	}
+});
+bot.addListener('message', function(from, to, message) {
+	if( message.indexOf('!got')> -1 )
+	{
+		
+		bot.say(to, got.showRemaining());
+		
+	}
 });

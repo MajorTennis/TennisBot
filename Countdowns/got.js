@@ -1,7 +1,5 @@
-//var twd = require('./twd.js');
-	
-		//THE WALKING DEAD
-var end1= new Date('03/30/2015 2:00 AM');
+		//GAME OF THRONES
+var end1= new Date('04/12/2015 2:00 AM');
 var _second = 1000;
 var _minute = _second * 60;
 var _hour = _minute * 60;
@@ -11,7 +9,7 @@ var _day = _hour * 24;
 //exports.twd.
 
 
-exports.showRemaining = function(to, bot, response){
+exports.showRemaining = function(to){
 //bot.say(to, "call worked");
 
 var now = new Date();
